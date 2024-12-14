@@ -6,27 +6,27 @@ export default async function Home() {
   const products = await getFeaturedProducts();
 
   return (
-    <div className="container px-4 py-8 mx-auto">
+    <div className="container mx-auto px-4 py-8">
       <section className="mb-12">
-        <div className="relative h-[500px] rounded-lg overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/50 z-10" />
+        <div className="relative h-[500px] overflow-hidden rounded-lg">
+          <div className="absolute inset-0 z-10 bg-gradient-to-r from-black/70 to-black/50" />
           <Image
             src="https://images.unsplash.com/photo-1441986300917-64674bd600d8"
             alt="Hero"
             fill
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 z-20 flex items-center justify-center text-center">
             <div className="max-w-3xl px-4">
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
+              <h1 className="mb-6 text-4xl font-bold text-white md:text-6xl">
                 Discover Your Style
               </h1>
-              <p className="text-lg md:text-xl text-white/90 mb-8">
+              <p className="mb-8 text-lg text-white/90 md:text-xl">
                 Shop the latest trends in fashion with our curated collection
               </p>
               <a
                 href="/products"
-                className="inline-block bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-white/90 transition"
+                className="inline-block rounded-full bg-white px-8 py-3 font-semibold text-black transition hover:bg-white/90"
               >
                 Shop Now
               </a>
@@ -36,53 +36,53 @@ export default async function Home() {
       </section>
 
       <section className="mb-12">
-        <h2 className="text-3xl font-bold mb-8">Featured Products</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <h2 className="mb-8 text-3xl font-bold">Featured Products</h2>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
       </section>
 
-      <section className="grid md:grid-cols-2 gap-8 mb-12">
-        <div className="relative h-[300px] rounded-lg overflow-hidden group">
-          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-300" />
+      <section className="mb-12 grid gap-8 md:grid-cols-2">
+        <div className="group relative h-[300px] overflow-hidden rounded-lg">
+          <div className="absolute inset-0 bg-black/40 transition-all duration-300 group-hover:bg-black/50" />
           <Image
             src="https://images.unsplash.com/photo-1483985988355-763728e1935b"
             alt="Women's Collection"
             fill
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="mb-4 text-2xl font-bold text-white">
                 Women&apos;s Collection
               </h3>
               <a
-                href="/category/women"
-                className="inline-block bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-white/90 transition"
+                href="/category/women's clothing"
+                className="inline-block rounded-full bg-white px-6 py-2 font-semibold text-black transition hover:bg-white/90"
               >
                 Shop Women
               </a>
             </div>
           </div>
         </div>
-        <div className="relative h-[300px] rounded-lg overflow-hidden group">
-          <div className="absolute inset-0 bg-black/40 group-hover:bg-black/50 transition-all duration-300" />
+        <div className="group relative h-[300px] overflow-hidden rounded-lg">
+          <div className="absolute inset-0 bg-black/40 transition-all duration-300 group-hover:bg-black/50" />
           <Image
             src="https://images.unsplash.com/photo-1488161628813-04466f872be2"
             alt="Men's Collection"
             fill
-            className="w-full h-full object-cover"
+            className="h-full w-full object-cover"
           />
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <h3 className="text-2xl font-bold text-white mb-4">
+              <h3 className="mb-4 text-2xl font-bold text-white">
                 Men&apos;s Collection
               </h3>
               <a
-                href="/category/men"
-                className="inline-block bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-white/90 transition"
+                href="/category/men's clothing"
+                className="inline-block rounded-full bg-white px-6 py-2 font-semibold text-black transition hover:bg-white/90"
               >
                 Shop Men
               </a>
