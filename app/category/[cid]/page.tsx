@@ -1,9 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { ProductCard } from "@/components/product-card";
 import { getAllCategories, getProductsByCategory } from "@/lib/db";
 import { Filters } from "@/components/filters";
 
-export default async function CategoryPage({
+async function CategoryPage({
   params,
 }: Readonly<{
   params: { cid: string };
@@ -45,4 +45,13 @@ export async function generateStaticParams() {
   return categories.map((cid) => ({
     cid, // This will create the path /category/electronics/page, /category/fashion/page, etc.
   }));
+}
+
+// Wrap your component in Suspense
+export default function PageWithSuspense({ params }: any) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <CategoryPage params={params} />
+    </Suspense>
+  );
 }
